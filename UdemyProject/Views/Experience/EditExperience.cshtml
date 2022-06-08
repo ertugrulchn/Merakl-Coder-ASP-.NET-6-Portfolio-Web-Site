@@ -1,0 +1,50 @@
+﻿@model EntityLayer.Concrete.Experience
+@{
+    ViewData["Title"] = "EditExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h2 class="mb-0">Deneyim Ekle</h2>
+</div>
+<div class="card-body px-lg-5 py-lg-5">
+    @using (Html.BeginForm("EditExperience", "Experience", FormMethod.Post))
+    {
+        @Html.HiddenFor(x=>x.ExperienceID)
+        <div class="form-group mb-3">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-html5"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.Name, new {@class="form-control", @placeholder="Deneyim Başlığı"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.Date, new {@class="form-control", @placeholder="Tarih Bilgisi"})
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-html5"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control", @placeholder="Resim Adresi(URL)"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextAreaFor(x=>x.Description, 10, 3, new {@class="form-control", @placeholder="Açıklama"})
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-info my-4">Kaydet</button>
+        </div>
+    }
+</div>

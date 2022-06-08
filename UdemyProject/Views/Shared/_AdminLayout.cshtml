@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+@await Html.PartialAsync("/Views/Admin/PartialHead.cshtml")
+<body>
+    <!-- Sidenav -->
+    @await Html.PartialAsync("/Views/Admin/PartialSideBar.cshtml")
+
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <!-- Topnav -->
+        @await Html.PartialAsync("/Views/Admin/PartialNavBar.cshtml")
+        @await Html.PartialAsync("/Views/Admin/PartialBreadcrumb.cshtml")
+
+        <!-- Page content -->
+        <div class="container-fluid mt--6">
+            <div class="row">
+                <div class="col">
+                    @RenderBody()
+                </div>
+            </div>
+            <!-- Footer -->
+            @await Html.PartialAsync("/Views/Admin/PartialFooter.cshtml")
+        </div>
+    </div>
+    @await Html.PartialAsync("/Views/Admin/PartialScript.cshtml")
+</body>
+
+</html>
