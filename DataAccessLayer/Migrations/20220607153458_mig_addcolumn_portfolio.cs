@@ -9,7 +9,7 @@ namespace DataAccessLayer.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "ImnageUrl2",
+                name: "ImageUrl2",
                 table: "Portfolios",
                 type: "nvarchar(max)",
                 nullable: false,
@@ -26,7 +26,7 @@ namespace DataAccessLayer.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "ImnageUrl2",
+                name: "ImageUrl2",
                 table: "Portfolios");
 
             migrationBuilder.DropColumn(
