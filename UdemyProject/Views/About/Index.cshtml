@@ -1,0 +1,74 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h2 class="mb-0">Hakkımda Düzenleme Sayfası</h2>
+</div>
+<div class="card-body px-lg-5 py-lg-5">
+    @using (Html.BeginForm("Index", "About", FormMethod.Post))
+    {
+        @Html.HiddenFor(x=>x.AboutID)
+        <div class="form-group mb-3">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-html5"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.Title, new {@class="form-control", @placeholder="Başlık"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.Age, new {@class="form-control", @placeholder="Yaş"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.Mail, new {@class="form-control", @placeholder="Email Adresi"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.Phone, new {@class="form-control", @placeholder="Telefon Numarası"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.Address, new {@class="form-control", @placeholder="Adres"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control", @placeholder="Profil Resmi"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
+                </div>
+                @Html.TextAreaFor(x=>x.Description, 10, 2, new {@class="form-control", @placeholder="Açıklama"})
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary my-4">Kaydet</button>
+        </div>
+    }
+</div>
