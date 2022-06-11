@@ -1,50 +1,36 @@
 ﻿@model EntityLayer.Concrete.Experience
 @{
     ViewData["Title"] = "EditExperience";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h2 class="mb-0">Deneyim Ekle</h2>
-</div>
-<div class="card-body px-lg-5 py-lg-5">
-    @using (Html.BeginForm("EditExperience", "Experience", FormMethod.Post))
-    {
-        @Html.HiddenFor(x=>x.ExperienceID)
-        <div class="form-group mb-3">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-html5"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.Name, new {@class="form-control", @placeholder="Deneyim Başlığı"})
+@using (Html.BeginForm("EditExperience", "Experience", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Deneyim Ekle</h4>
+                <form class="forms-sample">
+                    @Html.HiddenFor(e=>e.ExperienceID)
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" asp-for="Name" class="form-control" placeholder="Başlık">
+                    </div>
+                    <div class="form-group">
+                        <label>Tarih</label>
+                        <input type="text" class="form-control" asp-for="Date" placeholder="Tarih">
+                    </div>
+                    <div class="form-group">
+                        <label>Görsel URL</label>
+                        <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Görsel URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <textarea class="form-control" asp-for="Description" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                </form>
             </div>
         </div>
-        <div class="form-group">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.Date, new {@class="form-control", @placeholder="Tarih Bilgisi"})
-            </div>
-        </div>
-        <div class="form-group mb-3">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-html5"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control", @placeholder="Resim Adresi(URL)"})
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                </div>
-                @Html.TextAreaFor(x=>x.Description, 10, 3, new {@class="form-control", @placeholder="Açıklama"})
-            </div>
-        </div>
-        <div class="text-center">
-            <button class="btn btn-info my-4">Kaydet</button>
-        </div>
-    }
-</div>
+    </div>
+}

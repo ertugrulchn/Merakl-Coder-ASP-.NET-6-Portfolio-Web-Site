@@ -4,78 +4,47 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h2 class="mb-0">Proje Ekle</h2>
-</div>
-<div class="card-body px-lg-5 py-lg-5">
-    @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
-    {
-        <div class="form-group mb-3">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-html5"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.Name, new {@class="form-control", @placeholder="Proje Başlığı"})
-                @Html.ValidationMessageFor(x=>x.Name)
+@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Deneyim Ekle</h4>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Proje Başlığı</label>
+                        <input type="text" class="form-control" name="Name" placeholder="Proje Başlığı">
+                        @Html.ValidationMessageFor(x=>x.Name)
+                    </div>
+                    <div class="form-group">
+                        <label>Resim Yolu</label>
+                        <input type="text" class="form-control" name="ImageUrl" placeholder="Resim Yolu">
+                        @Html.ValidationMessageFor(x=>x.ImageUrl)
+                    </div>
+                    <div class="form-group">
+                        <label>Proje Linki</label>
+                        <input type="text" class="form-control" name="ProjectUrl" placeholder="Proje Linki">
+                        @Html.ValidationMessageFor(x=>x.ProjectUrl)
+                    </div>
+                    <div class="form-group">
+                        <label>Fiyat</label>
+                        <input type="text" class="form-control" name="Price" placeholder="Fiyat">
+                        @Html.ValidationMessageFor(x=>x.Price)
+                    </div>
+                    <div class="form-group">
+                        <label>Tamamlanma Oranı</label>
+                        <input type="text" class="form-control" name="Value" placeholder="Tamamlanma Oranı">
+                        @Html.ValidationMessageFor(x=>x.Value)
+                    </div>
+                    <div class="form-group">
+                        <label>Platform Resim URL</label>
+                        <input type="text" class="form-control" name="Platform" placeholder="Platform Resim URL">
+                        @Html.ValidationMessageFor(x=>x.Platform)
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                </form>
             </div>
         </div>
-        <div class="form-group">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control", @placeholder="Kapak Resmi(URL)"})
-                @Html.ValidationMessageFor(x=>x.ImageUrl)
-            </div>
-        </div>
-        <div class="form-group mb-3">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-html5"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.ImageUrl2, new {@class="form-control", @placeholder="Slider Resmi(URL)"})
-                @Html.ValidationMessageFor(x=>x.ImageUrl2)
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.ProjectUrl,  new {@class="form-control", @placeholder="Proje Linki"})
-                @Html.ValidationMessageFor(x=>x.ProjectUrl)
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.Price,  new {@class="form-control", @placeholder="Fiyat"})
-                @Html.ValidationMessageFor(x=>x.Price)
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.Value,  new {@class="form-control", @placeholder="Tamamlanma Oranı"})
-                @Html.ValidationMessageFor(x=>x.Value)
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                </div>
-                @Html.TextBoxFor(x=>x.Platform,  new {@class="form-control", @placeholder="Platform Resim URL"})
-                @Html.ValidationMessageFor(x=>x.Platform)
-            </div>
-        </div>
-        <div class="text-center">
-            <button class="btn btn-info my-4">Kaydet</button>
-        </div>
-    }
-</div>
+    </div>
+}
 
