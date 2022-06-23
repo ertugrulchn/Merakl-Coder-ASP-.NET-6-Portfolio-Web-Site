@@ -35,17 +35,19 @@ namespace UdemyProject.Areas.Writer.Controllers
                     ImageUrl = registerViewModel.ImageUrl,
                 };
 
-                var result = await _userManager.CreateAsync(writerUser, registerViewModel.Password);
-
-                if (result.Succeeded)
+                if (registerViewModel.Password == registerViewModel.ConfirmPassword)
                 {
-                    return RedirectToAction("Index", "Login");
-                }
-                else
-                {
-                    foreach (var item in result.Errors)
+                    var result = await _userManager.CreateAsync(writerUser, registerViewModel.Password);
+                    if (result.Succeeded)
                     {
-                        ModelState.AddModelError("", item.Description);
+                        return RedirectToAction("Index", "Login");
+                    }
+                    else
+                    {
+                        foreach (var item in result.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);
+                        }
                     }
                 }
             }
