@@ -1,0 +1,92 @@
+﻿@model UdemyProject.Areas.Writer.Models.UserRegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/SkydashAdminTheme/vendors/feather/feather.css">
+    <link rel="stylesheet" href="~/SkydashAdminTheme/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="~/SkydashAdminTheme/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/SkydashAdminTheme/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/SkydashAdminTheme/images/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-center auth px-0">
+                <div class="row w-100 mx-0">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                            <div class="brand-logo">
+                                <img src="~/SkydashAdminTheme/images/logo.svg" alt="logo">
+                            </div>
+                            <h4>Yeni misin?</h4>
+                            <h6 class="font-weight-light">Hoşgeldin o zaman. Sisteme kayıt olarak başlıyabilirsiin.</h6>
+                            <form class="pt-3" method="post">
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-lg" placeholder="Email Adresiniz" asp-for="Mail">
+                                    <span asp-validaton-for="Mail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Adınız" asp-for="Name">
+                                    <span asp-validaton-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Soyadınız" asp-for="Surname">
+                                    <span asp-validaton-for="Surname" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Kullanıcı Adı" asp-for="UserName">
+                                    <span asp-validaton-for="UserName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Resim URL(Opsiyonel)" asp-for="ImageUrl">
+                                    <span asp-validaton-for="ImageUrl" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-lg" placeholder="Şifreniz" asp-for="Password">
+                                    <span asp-validaton-for="Passwrod" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-lg" placeholder="Şifre Tekrar" asp-for="ConfirmPassword">
+                                    <span asp-validaton-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Kayıt Ol</button>
+                                </div>
+                                @*<div class="text-center mt-4 font-weight-light">
+                                    Already have an account? <a href="login.html" class="text-primary">Login</a>
+                                </div>*@
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <script src="~/SkydashAdminTheme/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/SkydashAdminTheme/js/off-canvas.js"></script>
+    <script src="~/SkydashAdminTheme/js/hoverable-collapse.js"></script>
+    <script src="~/SkydashAdminTheme/js/template.js"></script>
+    <script src="~/SkydashAdminTheme/js/settings.js"></script>
+    <script src="~/SkydashAdminTheme/js/todolist.js"></script>
+</body>
+
+</html>
