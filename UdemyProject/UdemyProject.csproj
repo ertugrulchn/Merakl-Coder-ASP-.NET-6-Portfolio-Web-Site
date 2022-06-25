@@ -19569,6 +19569,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Writer\Data\" />
+    <Folder Include="wwwroot\UserImage\" />
     <Folder Include="wwwroot\SkydashAdminTheme\.git\objects\info\" />
     <Folder Include="wwwroot\SkydashAdminTheme\.git\objects\pack\" />
     <Folder Include="wwwroot\SkydashAdminTheme\.git\refs\tags\" />
